@@ -1,8 +1,14 @@
 import * as React from 'react';
+import { Link } from "react-router-dom";
 import '../css/main.css';
 import Tick from '../images/tick.png';
 
 class Login extends React.Component {  
+   
+  public submitValidation=()=>{
+    console.log("Valid Data Submit");
+       
+  }
 
   public render() {
    return (
@@ -43,22 +49,22 @@ class Login extends React.Component {
           </div>
           <div className="col-md-5 form-left">
               <h3 className="center">Login to your account</h3>
-                <form method="POST">
+                <form method="POST" name = "myForm" onSubmit={this.submitValidation}>
                 <div className="form-group">
                 <label>Email address<span className="star">*</span></label>
-                <input type="email" className="form-control" id="email" placeholder="Enter email" name="email"/>
+                <input type="email" className="form-control" id="email" placeholder="Enter email" name="email" required/>
                 </div>
                 <div className="form-group">
                 <label>Password<span className="star">*</span></label>
-                <input type="password" className="form-control" id="pwd" placeholder="Enter password" name="pwd"/>
+                <input type="password" className="form-control" id="pwd" placeholder="Enter password" name="pwd" required/>
                 </div>
                 <div className="checkbox">
-                <label><input type="checkbox" name="remember"/> Remember me</label>
+                <label><input type="checkbox" name="remember" required/> Remember me</label>
                 <a href="#" className="pull-right forgot-link-cl">Forgot Password</a>
                 </div>
                 <button type="submit" className="btn btn-default">Sign In</button>
                 </form>
-                <h3 className="free-cl">Sign Up, It's Free!</h3>
+                <h3 className="free-cl"><Link to="/signup">Sign Up, It's Free!</Link></h3>
           </div>
           <div className="col-md-1"/>
       </div>

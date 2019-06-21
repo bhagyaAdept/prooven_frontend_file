@@ -2,6 +2,7 @@ import * as React from 'react';
 import {Route} from 'react-router-dom';
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
+import Dashboard from "./pages/dashboard/dashBoard";
 import Login from "./pages/login/login";
 import Signup from "./pages/signup/signup";
 
@@ -11,6 +12,7 @@ class App extends React.Component {
     <div className="App">
     <Header/> 
     <Route path='/login' exact component={Login}/>
+    <Route path='/dashboard' exact component={Dashboard}/>
     <Route path='/signup' exact component={Signup}/>
     <Footer/> 
     </div>
