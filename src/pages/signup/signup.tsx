@@ -3,7 +3,7 @@ import * as  React from 'react';
 import '../css/main.css';
 import Tick from '../images/tick.png';
 
-function Login() {
+class Signup extends React.Component {
   
   // componentDidMount() {
   //   axios.get(`https://us-central1-php-test-2accd.cloudfunctions.net/helloWorld`)
@@ -11,6 +11,8 @@ function Login() {
   //       console.log(res);
   //     });
   // }
+
+  public render() {
    return (
     <div className="container login-cl">
       <div className="row">
@@ -47,9 +49,9 @@ function Login() {
                 </div>
                 </div>        
           </div>
-          <div className="col-md-6 sign-left">
+          <div className="col-md-5 sign-left">
               <h3 className="center">Sign Up</h3>
-                <form action="/action_page.php">
+                <form method="POST">
                 <div className="form-group">
                 <label>Provider Name *</label>
                 <input type="text" className="form-control" id="pname" name="pname"/>
@@ -94,9 +96,11 @@ function Login() {
                 </form>
                 <h3 className="free-cl">Sign Up, It's Free!</h3>
           </div>
+          <div className="col-md-1"/>
       </div>
     </div>
   );
 }
+}
 
-export default Login;
+export default Signup;

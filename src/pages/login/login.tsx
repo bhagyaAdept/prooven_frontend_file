@@ -1,16 +1,10 @@
 import * as React from 'react';
-// import axios from "axios";
 import '../css/main.css';
 import Tick from '../images/tick.png';
 
-function Login() {
-  
-  // componentDidMount() {
-  //   axios.get(`https://us-central1-php-test-2accd.cloudfunctions.net/helloWorld`)
-  //     .then(res => {
-  //       console.log(res);
-  //     });
-  // }
+class Login extends React.Component {  
+
+  public render() {
    return (
     <div className="container login-cl">
       <div className="row">
@@ -47,9 +41,9 @@ function Login() {
                 </div>
                 </div>        
           </div>
-          <div className="col-md-6 form-left">
+          <div className="col-md-5 form-left">
               <h3 className="center">Login to your account</h3>
-                <form action="/action_page.php">
+                <form method="POST">
                 <div className="form-group">
                 <label>Email address<span className="star">*</span></label>
                 <input type="email" className="form-control" id="email" placeholder="Enter email" name="email"/>
@@ -66,9 +60,11 @@ function Login() {
                 </form>
                 <h3 className="free-cl">Sign Up, It's Free!</h3>
           </div>
+          <div className="col-md-1"/>
       </div>
     </div>
-  );
+ );
+}
 }
 
 export default Login;

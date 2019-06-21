@@ -84,20 +84,27 @@ background: #707070;
 }
 .img-cl{
     height: 90px;
+    width: 90px;
     margin-top: 14px;
     margin-bottom: 46px;
 }
 .text-cap-cl h3,h4{
     font-weight: 400;
 }
-@media only screen and (max-width: 600px) {
+.free-cl{
+    margin-bottom: 130px;
+}
+.sign-left{
+    line-height: 14px;
+}
+@media only screen and (max-width: 800px) {
     .img-cl {       
         margin-bottom: 20px;
     }
     .form-left{
-        margin-top:50px;
+        margin-top:80px;
     }
     .sign-left{
         margin-top:50px; 
-    }
+    }    
 }
