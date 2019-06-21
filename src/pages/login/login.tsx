@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 // import axios from "axios";
 import '../css/main.css';
 import Tick from '../images/tick.png';
@@ -14,12 +14,12 @@ function Login() {
    return (
     <div className="container login-cl">
       <div className="row">
-      <div className="col-md-6 align-cl">
+          <div className="col-md-6 align-cl">
                 <div id="myCarousel" className="carousel slide" data-ride="carousel">
                 <ol className="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="0" className="active"/>
+                <li data-target="#myCarousel" data-slide-to="1"/>
+                <li data-target="#myCarousel" data-slide-to="2"/>
                 </ol>
 
                 <div className="carousel-inner">
@@ -47,49 +47,21 @@ function Login() {
                 </div>
                 </div>        
           </div>
-          <div className="col-md-6 sign-left">
-              <h3 className="center">Sign Up</h3>
+          <div className="col-md-6 form-left">
+              <h3 className="center">Login to your account</h3>
                 <form action="/action_page.php">
                 <div className="form-group">
-                <label for="name">Provider Name *</label>
-                <input type="text" className="form-control" id="pname" name="pname"/>
+                <label>Email address<span className="star">*</span></label>
+                <input type="email" className="form-control" id="email" placeholder="Enter email" name="email"/>
                 </div>
                 <div className="form-group">
-                <label for="providertype">Provider Type*</label>
-                <select className="form-control" id="type1">
-                <option>Ex. School, University, College, etc.</option>
-                <option>Anna University</option>
-                </select>
+                <label>Password<span className="star">*</span></label>
+                <input type="password" className="form-control" id="pwd" placeholder="Enter password" name="pwd"/>
                 </div>
-                <div className="form-group">
-                <label for="sel1">Operating Country*</label>
-                <select className="form-control" id="type2">
-                <option></option>
-                <option>India</option>
-                <option>UK</option>
-                <option>USA</option>
-                </select>
+                <div className="checkbox">
+                <label><input type="checkbox" name="remember"/> Remember me</label>
+                <a href="#" className="pull-right forgot-link-cl">Forgot Password</a>
                 </div>
-                <div className="form-group">
-                <label for="name">Your Name *</label>
-                <input type="text" className="form-control" id="name" name="name"/>
-                </div> 
-                <div className="form-group">
-                <label for="name">Your Phone *</label>
-                <input type="text" className="form-control" id="phone" name="phone"/>
-                </div>     
-                <div className="form-group">
-                <label for="email">Your Email *</label>
-                <input type="email" className="form-control" id="email" name="email"/>
-                </div>
-                <div className="form-group">
-                <label for="site">Website</label>
-                <input type="text" className="form-control" id="web" name="web"/>
-                </div>  
-                <div class="form-group">
-                <label for="comment">About your business</label>
-                <textarea class="form-control" rows="5" id="comment"></textarea>
-                </div>           
                 <button type="submit" className="btn btn-default">Sign In</button>
                 </form>
                 <h3 className="free-cl">Sign Up, It's Free!</h3>

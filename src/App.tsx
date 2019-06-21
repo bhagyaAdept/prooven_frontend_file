@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Route} from 'react-router-dom';
-import Login from "./pages/login/login.js";
-import Signup from "./pages/signup/signup.js";
+import Login from "./pages/login/login";
+import Signup from "./pages/signup/signup";
 
 class App extends React.Component {
   public render() {
