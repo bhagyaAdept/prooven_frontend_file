@@ -9,6 +9,10 @@
 }
 label{
     font-weight: 400;
+    color:#a0a0a0;  
+}
+.form-control{
+    color:#a0a0a0;
 }
 .form-left .btn-default {
     color: #fff;
@@ -28,7 +32,7 @@ label{
 }
 .checkbox .forgot-link-cl{
     text-decoration: none;
-    color:#47484a;
+    color:#a0a0a0;
 }
 .center{
     text-align: center;
@@ -56,7 +60,7 @@ label{
 }
 
 .blog .carousel-indicators .active {
-background: #707070;
+    background: #707070;
 }
 .carousel-control.right{
     background-image: none;
@@ -72,7 +76,8 @@ background: #707070;
 }
 .carousel-indicators .active{
     border: 1px solid #868b97;
-    background-color:#868b97;
+    background-color:#868b97;    
+    margin:1px;
     width:18px;
     height: 18px;
 }
@@ -96,6 +101,30 @@ background: #707070;
 }
 .sign-left{
     line-height: 14px;
+}
+.select-css {
+	display: block;
+	font-size: 16px;
+	font-family: sans-serif;
+	box-sizing: border-box;
+	margin: 0;
+	border: 1px solid #aaa;
+	appearance: none;
+	background-color: #fff;
+	background-image: url('../images/down-arrow.svg'),
+	  linear-gradient(to bottom, #ffffff 0%,#fff 100%);
+	background-repeat: no-repeat, repeat;
+	background-position: right .7em top 50%, 0 0;
+	background-size: .65em auto, 100%; 
+}
+.select-css::-ms-expand {
+	display: none;
+}
+.select-css:hover {
+	border-color: #888;
+}
+.select-css option {
+	font-weight:normal;
 }
 @media only screen and (max-width: 800px) {
     .img-cl {       

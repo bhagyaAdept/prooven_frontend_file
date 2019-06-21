@@ -58,14 +58,14 @@ class Signup extends React.Component {
                 </div>
                 <div className="form-group">
                 <label>Provider Type*</label>
-                <select className="form-control" id="type1">
-                <option>Ex. School, University, College, etc.</option>
+                <select className="form-control select-css" id="type1">
+                <option className="default-drop-cl">Ex. School, University, College, etc.</option>
                 <option>Anna University</option>
                 </select>
                 </div>
                 <div className="form-group">
                 <label>Operating Country*</label>
-                <select className="form-control" id="type2">
+                <select className="form-control select-css" id="type2">
                 <option/>
                 <option>India</option>
                 <option>UK</option>

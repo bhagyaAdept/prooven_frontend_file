@@ -10,8 +10,8 @@ class Login extends React.Component {
       <div className="row">
           <div className="col-md-6 align-cl">
                 <div id="myCarousel" className="carousel slide" data-ride="carousel">
-                <ol className="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" className="active"/>
+                <ol className="carousel-indicators"> 
+                <li data-target="#myCarousel" id="hexagon2" data-slide-to="0" className="active"/>
                 <li data-target="#myCarousel" data-slide-to="1"/>
                 <li data-target="#myCarousel" data-slide-to="2"/>
                 </ol>
