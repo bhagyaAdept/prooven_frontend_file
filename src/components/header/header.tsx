@@ -19,9 +19,11 @@ class Header extends React.Component {
                                          <p id="hexagon" className="toggle_icon"><i className="fa fa-bars"/></p> 
                                         </Link>
                                         <ul className="dropdown-menu">
-                                            <li><Link to="/">Home</Link></li>
-                                            <li><Link to="/login">Login</Link></li>
-                                            <li><Link to="/signup">Signup</Link></li>
+                                            <li><Link to={"/login"}>Home</Link></li>
+                                            <li><Link to={"/login"}>Login</Link></li>
+                                            <li><Link to={"/signup"}>Signup</Link></li>
+                                            <li><Link to={"/dashboard"}>Dashboard</Link></li>
+                                            <li><Link to={"../myTranscript"}>Transcript</Link></li>
                                         </ul>
                                     </li>
                                 </ul>
