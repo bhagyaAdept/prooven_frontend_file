@@ -10,7 +10,7 @@ class Dashboard extends React.Component {
                 <div className="container my_container">
                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                         <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
-                            <h1>Good Morning, John</h1>
+                            <h2>Good Morning, John</h2>
                         </div>{/* end of col-6 */}
 
                         <div className="col-lg-3 col-md-3 col-sm-1 col-xs-12"/>
@@ -20,7 +20,7 @@ class Dashboard extends React.Component {
                                 <i className="fa fa-user-circle-o"/>
                             </div>{/* end of col-md-8 */}
                             <div className="col-lg-6 col-md-6 col-md-6 col-sm-6 col-xs-6 user-image ">
-                                <h1>Profile</h1>
+                                <h2>Profile</h2>
                             </div>{/* end of col-md-4 */}
                         </div>{/* end of col-2 */}
                         <br /> <br />

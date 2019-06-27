@@ -14,7 +14,7 @@ class Users extends React.Component {
   public render() {
    return (
     <div className="container user-cl">
-        <div className="">
+        <div className="top-head">
         <h2>Users</h2>
         <div className="row content-part">
             <div className="col-md-8 background-cl">

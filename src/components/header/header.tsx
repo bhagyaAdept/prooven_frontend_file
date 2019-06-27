@@ -25,7 +25,10 @@ class Header extends React.Component {
                                             <li><Link to={"/dashboard"}>Dashboard</Link></li>
                                             <li><Link to={"../myTranscript"}>Transcript</Link></li>
                                             <li><Link to={"../users"}>Users</Link></li>
+                                            <li><Link to={"../profile"}>Profile</Link></li>
                                             <li><Link to={"../security"}>Security</Link></li>
+                                            <li><Link to={"../notifications"}>Notifications</Link></li>
+                                            <li><Link to={"../feedback"}>Feedback</Link></li>
                                         </ul>
                                     </li>
                                 </ul>

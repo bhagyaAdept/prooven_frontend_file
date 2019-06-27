@@ -156,3 +156,11 @@
     color: white;
     text-align: center;
 }
+.footer-cl{
+    position: relative;
+}
+@media only screen and (max-width: 800px) {
+    .footer{
+        position: static;
+    }
+}
