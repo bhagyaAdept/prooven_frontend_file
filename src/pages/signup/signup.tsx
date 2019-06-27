@@ -1,4 +1,5 @@
 import * as  React from 'react';
+import { Link } from "react-router-dom";
 import axios from "../../axios";
 import '../css/main.css';
 import Tick from '../images/tick.png';
@@ -6,7 +7,7 @@ import Tick from '../images/tick.png';
 class Signup extends React.Component {
   
   public componentDidMount() {
-    axios.get(`https://us-central1-php-test-2accd.cloudfunctions.net/helloWorld`)
+    axios.post(`https://us-central1-prooven1-3a324.cloudfunctions.net/createScream`)
       .then(res => {
         console.log(res);
       });
@@ -58,18 +59,18 @@ class Signup extends React.Component {
                 <form method="POST" onSubmit={this.onclickSignUp}>
                 <div className="form-group">
                 <label>Provider Name *</label>
-                <input type="text" className="form-control" id="pname" name="pname" required/>
+                <input type="text" className="form-control" id="pname" name="pname" />
                 </div>
                 <div className="form-group">
                 <label>Provider Type*</label>
-                <select className="form-control select-css" id="type1" required>
+                <select className="form-control select-css" id="type1" >
                 <option className="default-drop-cl">Ex. School, University, College, etc.</option>
                 <option>Anna University</option>
                 </select>
                 </div>
                 <div className="form-group">
                 <label>Operating Country*</label>
-                <select className="form-control select-css" id="type2" required>
+                <select className="form-control select-css" id="type2" >
                 <option/>
                 <option>India</option>
                 <option>UK</option>
@@ -78,25 +79,25 @@ class Signup extends React.Component {
                 </div>
                 <div className="form-group">
                 <label>Your Name *</label>
-                <input type="text" className="form-control" id="name" name="name" required/>
+                <input type="text" className="form-control" id="name" name="name" />
                 </div> 
                 <div className="form-group">
                 <label>Your Phone *</label>
-                <input type="text" className="form-control" id="phone" name="phone" required/>
+                <input type="text" className="form-control" id="phone" name="phone" />
                 </div>     
                 <div className="form-group">
                 <label>Your Email *</label>
-                <input type="email" className="form-control" id="email" name="email" required/>
+                <input type="email" className="form-control" id="email" name="email" />
                 </div>
                 <div className="form-group">
                 <label>Website</label>
-                <input type="text" className="form-control" id="web" name="web" required/>
+                <input type="text" className="form-control" id="web" name="web" />
                 </div>  
                 <div className="form-group">
                 <label>About your business</label>
-                <textarea className="form-control" id="comment" required/>
+                <textarea className="form-control" id="comment" />
                 </div>           
-                <button type="submit" className="btn btn-default">Sign In</button>
+                <Link to="/login"><input type="submit" className="btn custom-btn" value="Sign Up"/></Link>
                 </form>
                 <h3 className="free-cl">Sign Up, It's Free!</h3>
           </div>

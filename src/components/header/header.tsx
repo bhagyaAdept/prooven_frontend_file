@@ -24,13 +24,15 @@ class Header extends React.Component {
                                             <li><Link to={"/signup"}>Signup</Link></li>
                                             <li><Link to={"/dashboard"}>Dashboard</Link></li>
                                             <li><Link to={"../myTranscript"}>Transcript</Link></li>
+                                            <li><Link to={"../users"}>Users</Link></li>
+                                            <li><Link to={"../security"}>Security</Link></li>
                                         </ul>
                                     </li>
                                 </ul>
                             </div>
                             <div className="col-lg-9 col-md-9 col-sm-7 "/>{/* col-lg-9 col-md-9 col-sm-2 */}
                             <div className="col-lg-2 col-md-2 col-sm-3 col-xs-6">
-                                <Link className="navbar-brand" to="/">
+                                <Link className="navbar-brand" to="/login">
                                     <img src={Logo} alt="Logo" />
                                 </Link>
                             </div>{/* col-lg-2 col-md-2 col-sm-4 col-xs-6 */}

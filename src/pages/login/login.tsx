@@ -1,13 +1,28 @@
 import * as React from 'react';
 import { Link } from "react-router-dom";
+import axios from "../../axios";
 import '../css/main.css';
 import Tick from '../images/tick.png';
 
 class Login extends React.Component {  
+
+  public state={
+    email:'',
+    password:''
+  }
+
+  public componentDidMount(){
+    axios.post(`helloWorld`,{
+      email: this.state.email,
+      password: this.state.password,
+    })
+    .then(res => {
+      console.log(res);
+    });   
+  }
    
   public submitValidation=()=>{
-    console.log("Valid Data Submit");
-       
+    console.log("Valid Data Submit");   
   }
 
   public render() {
@@ -49,20 +64,20 @@ class Login extends React.Component {
           </div>
           <div className="col-md-5 form-left">
               <h3 className="center">Login to your account</h3>
-                <form method="POST" name = "myForm" onSubmit={this.submitValidation}>
+                <form method="POST" name ="myForm" onSubmit={this.submitValidation}>
                 <div className="form-group">
                 <label>Email address<span className="star">*</span></label>
-                <input type="email" className="form-control" id="email" placeholder="Enter email" name="email" required/>
+                <input type="email" className="form-control" id="email" placeholder="Enter email" name="email" />
                 </div>
                 <div className="form-group">
                 <label>Password<span className="star">*</span></label>
-                <input type="password" className="form-control" id="pwd" placeholder="Enter password" name="pwd" required/>
+                <input type="password" className="form-control" id="pwd" placeholder="Enter password" name="password" />
                 </div>
                 <div className="checkbox">
-                <label><input type="checkbox" name="remember" required/> Remember me</label>
+                <label><input type="checkbox" name="remember"/> Remember me</label>
                 <a href="#" className="pull-right forgot-link-cl">Forgot Password</a>
                 </div>
-                <button type="submit" className="btn btn-default">Sign In</button>
+                <Link to="/dashboard"><input type="submit" className=" btn custom-btn" value="Sign In"/></Link>
                 </form>
                 <h3 className="free-cl"><Link to="/signup">Sign Up, It's Free!</Link></h3>
           </div>

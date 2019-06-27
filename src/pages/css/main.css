@@ -85,7 +85,8 @@ label{
     height: 18px;
 }
 .carousel-indicators{
-    top:360px !important;
+    top:390px !important;
+    position: relative;
 }
 .align-cl{
     text-align:center;
@@ -133,8 +134,10 @@ label{
 .user-left-part{
     margin: 0px;
   }
-  .user-image i{font-size: 65px;
-    color: #0468b5;line-height: 90px;
+  .user-image i{
+    font-size: 58px;
+    color: #0468b5;
+    line-height: 66px;
   }
   .user-profil-part{
     padding-bottom:30px;
@@ -174,7 +177,7 @@ label{
     border-radius: 44.5px;
     background-color: #ed1c24;
     position: absolute;
-    right: 170px;
+    right: 88px;
     top: 10px;
     z-index: 1;
     padding: 5px;
@@ -369,17 +372,6 @@ font-weight: 500;
 .bg_white{
     box-shadow: 0 8px 6px -6px #ccc;
 }
-
-.icons_circle h1 i {
-    color: #fff;
-    width: 115px;
-    height: 115px;
-    text-align: center;
-    line-height: 115px;
-    border-radius: 100%;
-    font-size: 55px;
-    background: linear-gradient(to bottom right, #3c63ef -2%, #1cafb9 78%);
-}
 .icons_circle h3{
     font-weight: 500;
  }
@@ -389,9 +381,10 @@ font-weight: 500;
  
  .icons_resources p{
  color: #006fb9;
- font-weight: 500;
+ font-weight: 600;
  font-size: 16px;
  margin: 0px;
+ cursor: pointer;
  }
  .icons_resources i{
     color: #fff;
@@ -432,7 +425,78 @@ font-weight: 500;
 .my_container{
     margin-bottom: 100px;
 }
+.custom-btn{
+    color: #fff;
+    background-color: #2870af;
+    border-color: #2870af;
+    width: 100%;
+    font-size: 20px;
+    border: none;
+    border-radius: 6px;
+}
 
+.custom-btn.active.focus, .custom-btn.active:focus, .custom-btn.focus, .custom-btn:active.focus, .custom-btn:active:focus, .custom-btn:focus {
+    width: 100%;
+    border-radius: 6px;
+    height: auto;
+    background-color: #0468b5;
+    color:#fff;
+    padding:16px;
+}
+.custom-btn:hover{
+    color:#fff;
+}
+.background-cl{
+    background-color:#fff;
+}
+.inner-list{
+    padding:20px;
+}
+.common-icon .fa{
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    border-radius: 100%;
+    font-size: 18px;
+    background: #006fb9;
+    margin-right: 10px;
+}
+.common-icon{
+    cursor: pointer;
+}
+.list-style p{
+    font-size: 20px;
+    font-weight: 300;    
+    line-height: 35px;
+}
+.list-style{
+    margin-top:30px;
+}
+.inner-list h3{
+    margin-top:30px;
+}
+.content-part{
+    margin-top:50px;
+}
+.activity-cl{
+    font-style: italic;
+    font-size:16px;
+    color:#818181;
+}
+.separate-cl{
+    margin-bottom:100px;
+}
+.security-part{
+    margin-top:50px;
+}
+.security-cl{
+    margin-bottom:150px;
+}
+.user-cl{
+    margin-bottom: 150px;
+}
 @media only screen and (max-width: 800px) {
     .img-cl {       
         margin-bottom: 20px;
@@ -445,5 +509,8 @@ font-weight: 500;
     }    
     .my_form_control {
         font-size:15px;
+    }
+    .user-cl{
+        margin-bottom: 140px;
     }
 }
