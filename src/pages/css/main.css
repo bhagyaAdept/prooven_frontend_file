@@ -87,7 +87,6 @@ label{
 .carousel-indicators{
     top:390px !important;
     position: relative;
-    z-index: -1;
 }
 .align-cl{
     text-align:center;
