@@ -7,12 +7,30 @@ import Tick from '../images/tick.png';
 class Login extends React.Component {  
 
   public state={
-    email:'',
-    password:''
+   email:"",
+   password:"",
   }
 
-  public componentDidMount(){
-    axios.post(`helloWorld`,{
+  // public componentDidMount(){
+  //   axios.post(`api/signup`,{
+  //     provider_name: "Dinesh",
+  //     provider_type: "college",
+  //     country: "india",
+  //     name: "hamsa",
+  //     phone: "123456",
+  //     email: "hamsa.bv@anekam.com",
+  //     website: "anekam.com",
+  //     about_business: "description goes here"
+  //   })
+  //   .then(res => {
+  //     console.log(res);
+  //   });   
+  // }
+   
+  public submitValidation=(e)=>{
+    e.preventDefault();
+    console.log(e);
+    axios.post(`api/signup`,{
       email: this.state.email,
       password: this.state.password,
     })
@@ -20,10 +38,7 @@ class Login extends React.Component {
       console.log(res);
     });   
   }
-   
-  public submitValidation=()=>{
-    console.log("Valid Data Submit");   
-  }
+  
 
   public render() {
    return (
@@ -77,7 +92,7 @@ class Login extends React.Component {
                 <label><input type="checkbox" name="remember"/> Remember me</label>
                 <a href="#" className="pull-right forgot-link-cl">Forgot Password</a>
                 </div>
-                <Link to="/dashboard"><input type="submit" className=" btn custom-btn" value="Sign In"/></Link>
+                <input type="submit" className="btn custom-btn"  value="Sign In"/>
                 </form>
                 <h3 className="free-cl"><Link to="/signup">Sign Up, It's Free!</Link></h3>
           </div>

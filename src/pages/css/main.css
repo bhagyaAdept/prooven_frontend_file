@@ -152,6 +152,7 @@ label{
     border-radius: 100%;
     font-size: 50px;
     background: linear-gradient(to bottom right, #3c63ef -2%, #1cafb9 78%);
+    cursor: pointer;
   }
   .icons_circle h3{
     text-transform: capitalize;
@@ -698,6 +699,16 @@ font-size: 16px;
 }
 .mt-20 a{
     text-decoration: none;
+}
+.error-cl{
+    font-size:14px;
+    color:#f00;
+}
+.success-cl{
+    font-size: 20px;
+    color: #00ce37;
+    text-align: center;
+    margin-top: 25px;
 }
 @media only screen and (max-width: 800px) {
     .img-cl {       
