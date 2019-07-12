@@ -7,7 +7,8 @@
     "jsx-boolean-value": [false],
     "no-multiple-variable-declaration": [true],
     "variable-name": [true],
-    "jsx-no-lambda": [ false ]
+    "jsx-no-lambda": [ false ],
+    "object-shorthand": [false]
 
   },
   "linterOptions": {

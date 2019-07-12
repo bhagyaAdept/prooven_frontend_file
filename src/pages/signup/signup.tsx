@@ -19,20 +19,34 @@ class Signup extends React.Component {
     aboutbusiness: "",
     passwordWrong:false,
     signupSuccess:false,
+    countryType:[],
+    providerList:[],
+
   }
 
   public onChange=(e)=>{
     this.setState({ [e.target.name]: e.target.value });
   }
   
+  public componentDidMount(){
+    axios.get(`api/country`)
+      .then(res => {
+        const countryList = res.data;
+        console.log(countryList.sort());
+        this.setState({ countryType: res.data});  
+      });
+
+      axios.get(`api/provider_type`)
+      .then(res => {
+        this.setState({ providerList: res.data}); 
+      });
+  }
+
   public onclickSignUp = (e) => {
     e.preventDefault();
-    console.log(e);
-    console.log("Onclick Submit ")
     const { password, confirmpassword } = this.state;
     if (confirmpassword !== password) {
       this.setState({passwordWrong:true});
-      console.log("Password Error");
     }
     else {
       this.setState({passwordWrong:false});
@@ -57,7 +71,7 @@ class Signup extends React.Component {
 
 
   public render() {
-   const {providername,providertype,country,name,phone,email,password,confirmpassword,website,aboutbusiness} = this.state;
+   const {providername,providertype,country,name,phone,email,password,confirmpassword,website,aboutbusiness,countryType} = this.state;
     return (
       <div className="container login-cl">        
         {this.state.signupSuccess?<p className="success-cl">Successfully Submitted !</p>:null}
@@ -111,17 +125,19 @@ class Signup extends React.Component {
               <div className="form-group">
                 <label>Provider Type*</label>
                 <select className="form-control select-css" id="type1" name="providertype" value={providertype} onChange={this.onChange} required>
-                  <option className="default-drop-cl">Ex. School, University, College, etc.</option>
-                  <option value="anna university">Anna University</option>
+                <option />
+                    {this.state.providerList.map(list =>
+                        <option key={list.id} value={list.id}>{list.name}</option>
+                    )}; 
                 </select>
               </div>
               <div className="form-group">
                 <label>Operating Country*</label>
                 <select className="form-control select-css" id="type2" name="country" value={country} onChange={this.onChange} required>
                   <option />
-                  <option value="india">India</option>
-                  <option value="uk">UK</option>
-                  <option value="usa">USA</option>
+                  {countryType.map(countryList  => countryList === null ? '': 
+                    <option key={countryList.code} value={countryList.code}>{countryList.name}</option>
+                    )}; 
                 </select>
               </div>
               <div className="form-group">
