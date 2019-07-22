@@ -17,6 +17,7 @@ class App extends React.Component {
     return (
     <div className="App">
     <Header/> 
+    <Route path='/' exact component={Login}/>
     <Route path='/login' exact component={Login}/>
     <Route path='/dashboard' exact component={Dashboard}/>
     <Route path='/myTranscript' exact component={MyTranscript}/>

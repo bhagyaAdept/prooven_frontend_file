@@ -10,27 +10,11 @@ class Login extends React.Component {
    email:"",
    password:"",
   }
-
-  // public componentDidMount(){
-  //   axios.post(`api/signup`,{
-  //     provider_name: "Dinesh",
-  //     provider_type: "college",
-  //     country: "india",
-  //     name: "hamsa",
-  //     phone: "123456",
-  //     email: "hamsa.bv@anekam.com",
-  //     website: "anekam.com",
-  //     about_business: "description goes here"
-  //   })
-  //   .then(res => {
-  //     console.log(res);
-  //   });   
-  // }
    
   public submitValidation=(e)=>{
     e.preventDefault();
     console.log(e);
-    axios.post(`api/signup`,{
+    axios.post(`api/signin`,{
       email: this.state.email,
       password: this.state.password,
     })

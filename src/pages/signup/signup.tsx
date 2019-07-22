@@ -21,6 +21,9 @@ class Signup extends React.Component {
     signupSuccess:false,
     countryType:[],
     providerList:[],
+    emailNotExist:false,
+    emailAlreadyExist:false,
+    errorMsg:false,
 
   }
 
@@ -67,6 +70,32 @@ class Signup extends React.Component {
           this.setState({signupSuccess:true});
         });
     }
+  }
+
+  public onBlurEmail=(e)=>{
+    axios.post('api/check_email'
+      , {
+      email: this.state.email,
+    }
+  )
+      .then((res) =>{
+        console.log(res.status);
+        if(res.status === 200){
+          console.log("Status 200");      
+          this.setState({emailNotExist:true}); 
+          this.setState({emailAlreadyExist:false});
+          this.setState({errorMsg:false});         
+        }
+      })
+        .catch((error)=> {  
+          console.log(error.res.status);
+          console.log(error.res.Status);       
+            console.log(error);
+            console.log("error");
+            this.setState({emailAlreadyExist:true});  
+            this.setState({errorMsg:false}); 
+            this.setState({emailNotExist:false});
+      });
   }
 
 
@@ -173,9 +202,12 @@ class Signup extends React.Component {
                 name="email" 
                 value={email}
                 onChange={this.onChange}
+                onBlur={this.onBlurEmail}
                 required
                 />
               </div>
+              {this.state.emailNotExist ? <p>Email Not Exist</p>:null}
+              {this.state.emailAlreadyExist ? <p>Email Already Exist</p>:null}
               <div className="form-group">
                 <label>Your Password *</label>
                 <input 
