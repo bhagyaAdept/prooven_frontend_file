@@ -1,20 +1,35 @@
 import * as  React from 'react';
-import axios from "../../axios";
+// import axios from "../../axios";
 import { Link } from 'react-router-dom';
+import { Dispatch } from "redux";
+import { connect } from "react-redux";
 import QR from '../images/QR.png';
 import '../css/main.css';
 
-class Profile extends React.Component {
+interface IProps {
+    about_business:any,
+    country:any,
+    email:any,
+    name:any,
+    phone:any,
+    privateKey:any,
+    provider_name:any,
+    provider_type:any,
+    publicKey:any,
+    website:any,
+    loginInfo:any;
+  }
 
-    public componentDidMount() {
-        axios.post(`https://us-central1-prooven1-3a324.cloudfunctions.net/createScream`)
-            .then(res => {
-                console.log(res);
-            });
-    }
+class Profile extends React.Component<IProps> {
+
+    // public componentDidMount() {
+    //     axios.post(`https://us-central1-prooven1-3a324.cloudfunctions.net/createScream`)
+    //         .then(res => {
+    //             console.log(res);
+    //         });
+    // }
 
     public render() {
-
         return (
             <div className="body_offwhite">
             <div className="container my_container">
@@ -24,7 +39,7 @@ class Profile extends React.Component {
                 <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                 <div className="row">
             {/*---------------------start left block--------------- */}
-                <div className="col-lg-6 col-md-5 col-md-5 col-sm-12 col-xs-12">
+                <div className="col-lg-7 col-md-7 col-sm-12 col-xs-12">
 
 
                 <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 pdg_25 bkg_white">
@@ -34,8 +49,8 @@ class Profile extends React.Component {
                 </div> {/* col-4 */}
                 <div className="col-lg-8 col-md-8 col-sm-12 col-xs-12 user-image ">
                     <br />
-                    <h3>Nick Radachi</h3>
-                    <h5>Joined in 2014</h5>
+                    <h3>{this.props.name}</h3>
+                    {/* <h5>Joined in 2014</h5> */}
                     <hr />
                     </div>{/* end of col-8*/}
                 </div>{/* end of col-md-12 */}
@@ -51,9 +66,9 @@ class Profile extends React.Component {
                <h3> Blockchain credentials <span className="flt_rgt"><i className="fa fa-plus" /></span></h3>
                <div className="qr-img">                    
                <img src={ QR } alt="QR" className="" />
-               <p>0x12345graty6jybghjkj88</p>
+               <p>{this.props.privateKey}</p>
 
-               <p>0x12345graebghjkj56787</p>
+               <p>{this.props.publicKey}</p>
                </div>
                 
                 </div>{/* end of col-md-12 */}
@@ -67,9 +82,9 @@ class Profile extends React.Component {
                
                <h3>Education <span className="flt_rgt"><i className="fa fa-plus" /></span></h3>
                
-                <h4>Univercity of arizona </h4><h4>2014</h4>
+                {/* <h4>Univercity of arizona </h4><h4>2014</h4> */}
                 
-                <h4>Nuteritional Sciences</h4>
+                {/* <h4>Nuteritional Sciences</h4> */}
                 </div>{/* end of col-md-12 */}
 
                       {/*----------------------------------------------------------
@@ -81,23 +96,23 @@ class Profile extends React.Component {
                
                <h3>Employment <span className="flt_rgt"><i className="fa fa-plus" /></span></h3>
                
-                <h4>Employer 1</h4>
-                <h4>Dates Employed</h4>
+                <h4>{this.props.name}</h4>
+                {/* <h4>Dates Employed</h4> */}
                 
-                <h4>Roles</h4>
+                <h4>{this.props.provider_name}</h4>
                 </div>{/* end of col-md-12 */}
 
                 </div>{/* end of col-md-6 */}
 
                {/*------------------ end of left block---------------*/ }
-                <div className="col-lg-6 col-md-6 col-md-6 col-sm-12 col-xs-12 ">
+                <div className="col-lg-5 col-md-5 col-sm-12 col-xs-12 ">
                 <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 pdg_25 bkg_white address mt-20">
                
                <h3> Address <span className="flt_rgt"><i className="fa fa-plus" /></span></h3>
-               <h5>You have 3 addresses</h5>
+               {/* <h5>You have 3 addresses</h5>
                <h4>11923 N 123 Way</h4>
                <h4>Scottsdale, AZ 85259</h4>
-               <h5>Primary address</h5>
+               <h5>Primary address</h5> */}
                 <Link to ="#">Manage All Addresses</Link>
                 </div>{/* end of col-md-12 */}
 
@@ -109,7 +124,7 @@ class Profile extends React.Component {
                 <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 pdg_25 bkg_white address">
                
                <h3> Email <span className="flt_rgt"><i className="fa fa-plus" /></span></h3>
-               <h5>nradachi@gmail.com</h5>
+               <h5>{this.props.email}</h5>
                <h4>Primary</h4>
                <p>To update an email address, you must have at least two email address on file.</p>
                </div>{/* end of col-md-12 */}
@@ -124,7 +139,7 @@ class Profile extends React.Component {
                <h3> Phone <span className="flt_rgt"><i className="fa fa-plus" /></span></h3>
                <div className="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                    <div className="row">
-                <h4>(4**)***-2939</h4>
+                <h4>{this.props.phone}</h4>
                 <h4>Mobile, Primary</h4>
                </div>{/* end of row */}
                </div>{/* end of col-md-8*/}
@@ -135,7 +150,7 @@ class Profile extends React.Component {
                <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <hr /></div>
                <div className="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                    <div className="row">
-                <h4>(4**)***-2939</h4>
+                <h4>{this.props.phone}</h4>
                 <h4>Mobile, Primary</h4>
                </div>{/* end of row */}
                </div>{/* end of col-md-8*/}
@@ -179,4 +194,27 @@ class Profile extends React.Component {
     }
 }
 
-export default Profile;
+const mapStateToProps = state => ({
+    about_business: state.form.about_business,
+    country: state.form.country,
+    email: state.form.email,
+    name: state.form.name,
+    phone: state.form.phone,
+    privateKey: state.form.privateKey,
+    provider_name: state.form.provider_name,
+    provider_type: state.form.provider_type,
+    publicKey: state.form.publicKey,
+    website: state.form.website,
+  });
+  
+  /**
+   * define the dispatch actions
+   * @param dispatch the actions to be dispatched
+   */
+  const mapDispatchToProps = (dispatch: Dispatch) => {
+    return {
+      loginInfo: (about_business,country,email,name,phone,privateKey,provider_name,provider_type,publicKey,website) => dispatch({ type: "loginInfo", value:{about_business,country,email,name,phone,privateKey,provider_name,provider_type,publicKey,website} }),
+    }
+  };
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(Profile);

@@ -6,10 +6,9 @@
     "no-console": [false],
     "jsx-boolean-value": [false],
     "no-multiple-variable-declaration": [true],
-    "variable-name": [true],
+    "variable-name": [ false ],
     "jsx-no-lambda": [ false ],
     "object-shorthand": [false]
-
   },
   "linterOptions": {
     "exclude": [

@@ -21,15 +21,12 @@ class Signup extends React.Component {
     signupSuccess:false,
     countryType:[],
     providerList:[],
-    emailNotExist:false,
-    emailAlreadyExist:false,
-    errorMsg:false,
 
   }
 
   public onChange=(e)=>{
     this.setState({ [e.target.name]: e.target.value });
-  }
+  } 
   
   public componentDidMount(){
     axios.get(`api/country`)
@@ -70,32 +67,6 @@ class Signup extends React.Component {
           this.setState({signupSuccess:true});
         });
     }
-  }
-
-  public onBlurEmail=(e)=>{
-    axios.post('api/check_email'
-      , {
-      email: this.state.email,
-    }
-  )
-      .then((res) =>{
-        console.log(res.status);
-        if(res.status === 200){
-          console.log("Status 200");      
-          this.setState({emailNotExist:true}); 
-          this.setState({emailAlreadyExist:false});
-          this.setState({errorMsg:false});         
-        }
-      })
-        .catch((error)=> {  
-          console.log(error.res.status);
-          console.log(error.res.Status);       
-            console.log(error);
-            console.log("error");
-            this.setState({emailAlreadyExist:true});  
-            this.setState({errorMsg:false}); 
-            this.setState({emailNotExist:false});
-      });
   }
 
 
@@ -179,6 +150,7 @@ class Signup extends React.Component {
                 value={name}
                 onChange={this.onChange}
                 required
+                pattern="[A-Za-z]{3}" 
                 />
               </div>
               <div className="form-group">
@@ -191,6 +163,7 @@ class Signup extends React.Component {
                 value={phone}
                 onChange={this.onChange}
                 required
+                pattern="[789][0-9]{9}"
                 />
               </div>
               <div className="form-group">
@@ -202,12 +175,10 @@ class Signup extends React.Component {
                 name="email" 
                 value={email}
                 onChange={this.onChange}
-                onBlur={this.onBlurEmail}
                 required
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                 />
               </div>
-              {this.state.emailNotExist ? <p>Email Not Exist</p>:null}
-              {this.state.emailAlreadyExist ? <p>Email Already Exist</p>:null}
               <div className="form-group">
                 <label>Your Password *</label>
                 <input 
@@ -218,6 +189,7 @@ class Signup extends React.Component {
                 value={password}
                 onChange={this.onChange}
                 required
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                 />
               </div>
               <div className="form-group">
@@ -243,6 +215,7 @@ class Signup extends React.Component {
                 value={website}
                 onChange={this.onChange}
                 required
+                pattern="https?://.+"
                 />
               </div>
               <div className="form-group">
