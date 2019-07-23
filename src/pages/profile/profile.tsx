@@ -5,6 +5,7 @@ import { Dispatch } from "redux";
 import { connect } from "react-redux";
 import QR from '../images/QR.png';
 import '../css/main.css';
+import Navbar from "../../components/header/navbar";
 
 interface IProps {
     about_business:any,
@@ -18,6 +19,7 @@ interface IProps {
     publicKey:any,
     website:any,
     loginInfo:any;
+  // logoutInfo: false
   }
 
 class Profile extends React.Component<IProps> {
@@ -33,6 +35,8 @@ class Profile extends React.Component<IProps> {
     //             console.log(res);
     //         });
     // }
+
+  
     public privateKey(){
         this.setState({privateKey:true});
     }
@@ -41,12 +45,16 @@ class Profile extends React.Component<IProps> {
     }
 
     public render() {
+        
         return (
+            <div>
+            <Navbar/>
+            
             <div className="body_offwhite">
             <div className="container my_container">
                            
                 <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 "> <h1>Profile</h1>  <br /><br /></div>                 
-
+                
                 <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                 <div className="row">
             {/*---------------------start left block--------------- */}
@@ -207,6 +215,7 @@ class Profile extends React.Component<IProps> {
 
             </div> {/* end of container */}
         </div>
+        </div>
         );
     }
 }
@@ -231,6 +240,7 @@ const mapStateToProps = state => ({
   const mapDispatchToProps = (dispatch: Dispatch) => {
     return {
       loginInfo: (about_business,country,email,name,phone,privateKey,provider_name,provider_type,publicKey,website) => dispatch({ type: "loginInfo", value:{about_business,country,email,name,phone,privateKey,provider_name,provider_type,publicKey,website} }),
+     // logoutInfo: (about_business,country,email,name,phone,privateKey,provider_name,provider_type,publicKey,website) => dispatch({ type: "logoutInfo", value:{about_business,country,email,name,phone,privateKey,provider_name,provider_type,publicKey,website} }),
     }
   };
   

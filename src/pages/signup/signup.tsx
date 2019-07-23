@@ -1,8 +1,9 @@
 import * as  React from 'react';
-// import { Link } from "react-router-dom";
+ import { Link } from "react-router-dom";
 import axios from "../../axios";
 import '../css/main.css';
 import Tick from '../images/tick.png';
+import Header from "../../components/header/header";
 
 class Signup extends React.Component {
 
@@ -73,6 +74,7 @@ class Signup extends React.Component {
   public render() {
    const {providername,providertype,country,name,phone,email,password,confirmpassword,website,aboutbusiness,countryType} = this.state;
     return (
+      <div><Header />
       <div className="container login-cl">        
         {this.state.signupSuccess?<p className="success-cl">Successfully Submitted !</p>:null}
         <div className="row">
@@ -235,11 +237,11 @@ class Signup extends React.Component {
                 value="Sign Up" 
                 />
             </form>
-            <h3 className="free-cl">Sign Up, It's Free!</h3>
+            <h3 className="free-cl"><Link  to="/login">Sign In, It's Free!</Link></h3>
           </div>
           <div className="col-md-1" />
         </div>
-      </div>
+      </div></div>
     );
   }
 }

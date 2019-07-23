@@ -10,7 +10,7 @@ interface IProps {
   loginInfo: any;
 }
 
-class Login extends React.Component<IProps> {  
+class Logout extends React.Component<IProps> {  
 
   public state={
    email:"",
@@ -66,7 +66,7 @@ class Login extends React.Component<IProps> {
       
    return (
      <div>
-       <Header/>
+       <Header />
      
     <div className="container login-cl">
       <div className="row">
@@ -158,16 +158,16 @@ class Login extends React.Component<IProps> {
 }
 
 const mapStateToProps = state => ({
-  about_business: state.form.about_business,
-  country: state.form.country,
-  email: state.form.email,
-  name: state.form.name,
-  phone: state.form.phone,
-  privateKey: state.form.privateKey,
-  provider_name: state.form.provider_name,
-  provider_type: state.form.provider_type,
-  publicKey: state.form.publicKey,
-  website: state.form.website,
+  about_business: "",
+  country: "",
+  email: "",
+  name: "",
+  phone: "",
+  privateKey: "",
+  provider_name: "",
+  provider_type: "",
+  publicKey: "",
+  website: "",
 });
 
 /**
@@ -180,4 +180,4 @@ const mapDispatchToProps = (dispatch: Dispatch) => {
   }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Logout);

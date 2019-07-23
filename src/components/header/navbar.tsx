@@ -4,7 +4,7 @@ import Logo from '../images/logo.png';
 import '../css/default.css';
 
     
-class Header extends React.Component {
+class Navbar extends React.Component {
 
     public render() {
         return (
@@ -20,8 +20,8 @@ class Header extends React.Component {
                                         </Link>
                                         <ul className="dropdown-menu">
                                           
-                                            <li><Link to={"/login"}>Login</Link></li>
-                                            <li><Link to={"/signup"}>Signup</Link></li>
+                                            <li><Link to={"/logout"}>Logout</Link></li>
+                                            
                                             
                                         </ul>
                                     </li>
@@ -41,4 +41,4 @@ class Header extends React.Component {
     }
 }
 
-export default Header;
+export default Navbar;
