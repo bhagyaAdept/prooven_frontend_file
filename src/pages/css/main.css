@@ -793,3 +793,9 @@ font-size: 16px;
     color: #f00;
     text-align: center;
 }
+.click-cl{
+    color: #337ab7;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+}

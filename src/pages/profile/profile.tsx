@@ -22,12 +22,23 @@ interface IProps {
 
 class Profile extends React.Component<IProps> {
 
+    public state={
+        privateKey: false,
+        publicKey: false,
+    }
+      
     // public componentDidMount() {
     //     axios.post(`https://us-central1-prooven1-3a324.cloudfunctions.net/createScream`)
     //         .then(res => {
     //             console.log(res);
     //         });
     // }
+    public privateKey(){
+        this.setState({privateKey:true});
+    }
+    public publicKey(){
+        this.setState({publicKey:true});
+    }
 
     public render() {
         return (
@@ -66,9 +77,15 @@ class Profile extends React.Component<IProps> {
                <h3> Blockchain credentials <span className="flt_rgt"><i className="fa fa-plus" /></span></h3>
                <div className="qr-img">                    
                <img src={ QR } alt="QR" className="" />
-               <p>{this.props.privateKey}</p>
+               <p><b>Private key :</b><span className="click-cl" onClick={()=>this.privateKey()}> Click Here</span></p>               
+               {this.state.privateKey?
+                 <p>{this.props.privateKey}</p>
+                :null}
+                <p><b>Public key :</b><span className="click-cl" onClick={()=>this.publicKey()}> Click Here </span></p>
+                 {this.state.publicKey?
+                 <p>{this.props.publicKey}</p>
+                :null}
 
-               <p>{this.props.publicKey}</p>
                </div>
                 
                 </div>{/* end of col-md-12 */}

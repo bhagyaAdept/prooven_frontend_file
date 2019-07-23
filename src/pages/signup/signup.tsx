@@ -29,14 +29,14 @@ class Signup extends React.Component {
   } 
   
   public componentDidMount(){
-    axios.get(`api/country`)
+    axios.get(`https://us-central1-prooven-ceb0f.cloudfunctions.net/api/country`)
       .then(res => {
         const countryList = res.data;
         console.log(countryList.sort());
         this.setState({ countryType: res.data});  
       });
 
-      axios.get(`api/provider_type`)
+      axios.get(`https://us-central1-prooven-ceb0f.cloudfunctions.net/api/provider_type`)
       .then(res => {
         this.setState({ providerList: res.data}); 
       });
@@ -150,7 +150,7 @@ class Signup extends React.Component {
                 value={name}
                 onChange={this.onChange}
                 required
-                pattern="[A-Za-z]{3}" 
+                // pattern="[A-Za-z]{20}" 
                 />
               </div>
               <div className="form-group">
@@ -215,7 +215,7 @@ class Signup extends React.Component {
                 value={website}
                 onChange={this.onChange}
                 required
-                pattern="https?://.+"
+                // pattern="https?://.+"
                 />
               </div>
               <div className="form-group">
