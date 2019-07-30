@@ -2,8 +2,9 @@ import * as  React from 'react';
  import { Link } from "react-router-dom";
 import axios from "../../axios";
 import '../css/main.css';
-import Tick from '../images/tick.png';
+import Tick from '../images/slider_check.png';
 import Header from "../../components/header/header";
+// import Popup from "reactjs-popup";
 
 class Signup extends React.Component {
 
@@ -75,36 +76,85 @@ class Signup extends React.Component {
    const {providername,providertype,country,name,phone,email,password,confirmpassword,website,aboutbusiness,countryType} = this.state;
     return (
       <div><Header />
-      <div className="container login-cl">        
-        {this.state.signupSuccess?<p className="success-cl">Successfully Submitted !</p>:null}
+      
+      {this.state.signupSuccess? <div className="col-lg-12 sucess_signup">
+       <div className="col-lg-4" />
+       <div className="col-lg-4 sucess_message_popup">
+         <h1>You have signed up sucessfully. Please login to your account<br /> 
+         <Link  to="/login">Click Here to Login</Link><br />
+      
+         </h1>
+        
+         </div>
+         <div className="col-lg-4" />
+         </div>:null} 
+         
+      <div className="container login-cl">    
+     
+        
         <div className="row">
           <div className="col-md-6 align-cl">
-            <div id="myCarousel" className="carousel slide" data-ride="carousel">
+
+
+          <div id="myCarousel" className="carousel slide" data-ride="carousel">
               <ol className="carousel-indicators" id="grid">
                 <li data-target="#myCarousel" data-slide-to="0" className="active" />
                 <li data-target="#myCarousel" data-slide-to="1" />
                 <li data-target="#myCarousel" data-slide-to="2" />
+                <li data-target="#myCarousel" data-slide-to="3" />
               </ol>
               <div className="carousel-inner">
                 <div className="item active">
-                  <div className="text-cap-cl">
-                    <h3>Welcome to Prooven!</h3>
-                    <h4>Your World. Verified.</h4>
-                    <img src={Tick} alt="Tick Image" className="img-cl" />
-                    <p>Integrity. Trust. Accountability.</p>
-                    <p>Prooven takes a next-gen approach to verifying information that you come across daily.</p>
-                    <p>We identify items that are true, false, or somewhere in the middle, then show you how those claims stack up to others.</p>
-                  </div>
+                <div className="text-cap-cl">
+                <div className="col-lg-2" />
+                <div className="col-lg-8">
+                <h2>Welcome To Prooven !</h2>
+                <h4>Your World. Verified.</h4>
+                <img src={Tick} alt="Tick Image" className="img-cl"/>
+                <p>Integrity. Trust. Accountability.</p>
+                <p>Prooven takes a next-gen approach to verifying information that you come across daily.</p>
+                <p>We identify items that are true, false, or somewhere in the middle, then show you how those claims stack up to others.</p>
+                </div> <div className="col-lg-2" />
+                </div> 
                 </div>
                 <div className="item">
-                  <div className="text-cap-cl">
-                    <h3>Thank you</h3>
-                    <h4>Your World. Verified.</h4>
-                    <img src={Tick} alt="Tick Image" className="img-cl" />
-                    <p>Integrity. Trust. Accountability.</p>
-                    <p>Prooven takes a next-gen approach to verifying information that you come across daily.</p>
-                    <p>We identify items that are true, false, or somewhere in the middle, then show you how those claims stack up to others.</p>
-                  </div>
+                <div className="text-cap-cl">
+                <div className="col-lg-2" />
+                <div className="col-lg-8">
+                <h2>Welcome To Prooven !</h2>
+                <h4>Your World. Verified.</h4>
+                <img src={Tick} alt="Tick Image" className="img-cl"/>
+                <p>Integrity. Trust. Accountability.</p>
+                <p>Prooven takes a next-gen approach to verifying information that you come across daily.</p>
+                <p>We identify items that are true, false, or somewhere in the middle, then show you how those claims stack up to others.</p>
+                </div> <div className="col-lg-2" />
+                </div> 
+                </div>
+                <div className="item">
+                <div className="text-cap-cl">
+                <div className="col-lg-2" />
+                <div className="col-lg-8">
+                <h2>Welcome To Prooven !</h2>
+                <h4>Your World. Verified.</h4>
+                <img src={Tick} alt="Tick Image" className="img-cl"/>
+                <p>Integrity. Trust. Accountability.</p>
+                <p>Prooven takes a next-gen approach to verifying information that you come across daily.</p>
+                <p>We identify items that are true, false, or somewhere in the middle, then show you how those claims stack up to others.</p>
+                </div> <div className="col-lg-2" />
+                </div> 
+                </div>
+                <div className="item">
+                <div className="text-cap-cl">
+                <div className="col-lg-2" />
+                <div className="col-lg-8">
+                <h2>Welcome To Prooven !</h2>
+                <h4>Your World. Verified.</h4>
+                <img src={Tick} alt="Tick Image" className="img-cl"/>
+                <p>Integrity. Trust. Accountability.</p>
+                <p>Prooven takes a next-gen approach to verifying information that you come across daily.</p>
+                <p>We identify items that are true, false, or somewhere in the middle, then show you how those claims stack up to others.</p>
+                </div> <div className="col-lg-2" />
+                </div> 
                 </div>
               </div>
             </div>
@@ -237,7 +287,7 @@ class Signup extends React.Component {
                 value="Sign Up" 
                 />
             </form>
-            <h3 className="free-cl"><Link  to="/login">Sign In, It's Free!</Link></h3>
+            <h3 className="free-cl"><Link  to="/login">Already have account ? Sign In Here !</Link></h3>
           </div>
           <div className="col-md-1" />
         </div>

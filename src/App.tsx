@@ -18,7 +18,7 @@ class App extends React.Component {
     return (
     <div className="App">
      
-    <Route path='/' exact component={Login}/>
+    <Route path='/' exact component={Login} />
     <Route path='/login' exact component={Login}/>
     <Route path='/dashboard' exact component={Dashboard}/>
     <Route path='/myTranscript' exact component={MyTranscript}/>
@@ -26,7 +26,7 @@ class App extends React.Component {
     <Route path='/security' exact component={Security}/>
     <Route path='/notifications' exact component={Notifications}/>
     <Route path='/feedback' exact component={Feedback}/>
-    <Route path='/profile' exact component={Profile}/>
+    <Route path='/profile' exact component={Profile} routerLinkActive = "active"/>
     <Route path='/signup' exact component={Signup}/>
     <Route path='/logout' exact component={Logout}/>
     <Footer/> 

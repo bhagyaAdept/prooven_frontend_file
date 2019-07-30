@@ -4,7 +4,7 @@ import { Dispatch } from "redux";
 import { connect } from "react-redux";
 import axios from "../../axios";
 import '../css/main.css';
-import Tick from '../images/tick.png';
+import Tick from '../images/slider_check.png';
 import Header from "../../components/header/header";
 interface IProps {
   loginInfo: any;
@@ -44,7 +44,7 @@ class Login extends React.Component<IProps> {
           loginData.email,
           loginData.name,
           loginData.phone, 
-          loginData.privateKey,
+          loginData.phrase,
           loginData.provider_name, 
           loginData.provider_type,
           loginData.publicKey,
@@ -70,36 +70,69 @@ class Login extends React.Component<IProps> {
      
     <div className="container login-cl">
       <div className="row">
-          <div className="col-md-6 align-cl">
+      <div className="col-md-6 align-cl">
                 <div id="myCarousel" className="carousel slide" data-ride="carousel">
 
                 <ol className="carousel-indicators"> 
                 <li data-target="#myCarousel" id="hexagon2" data-slide-to="0" className="active"/>
                 <li data-target="#myCarousel" data-slide-to="1"/>
                 <li data-target="#myCarousel" data-slide-to="2"/>
+                <li data-target="#myCarousel" data-slide-to="3"/>
                 </ol>
 
                 <div className="carousel-inner">
                 <div className="item active">
-                <div className="text-cap-cl">                  
-                <h3>Welcome to Prooven!</h3>
+                <div className="text-cap-cl">
+                <div className="col-lg-2" />
+                <div className="col-lg-8">
+                <h2>Welcome To Prooven !</h2>
                 <h4>Your World. Verified.</h4>
                 <img src={Tick} alt="Tick Image" className="img-cl"/>
                 <p>Integrity. Trust. Accountability.</p>
                 <p>Prooven takes a next-gen approach to verifying information that you come across daily.</p>
                 <p>We identify items that are true, false, or somewhere in the middle, then show you how those claims stack up to others.</p>
-                </div>
+                </div> <div className="col-lg-2" />
+                </div> 
                 </div>
 
                 <div className="item">
                 <div className="text-cap-cl">
-                <h3>Thank you</h3>
+                <div className="col-lg-2" />
+                <div className="col-lg-8">
+                <h2>Welcome To Prooven !</h2>
                 <h4>Your World. Verified.</h4>
                 <img src={Tick} alt="Tick Image" className="img-cl"/>
                 <p>Integrity. Trust. Accountability.</p>
                 <p>Prooven takes a next-gen approach to verifying information that you come across daily.</p>
                 <p>We identify items that are true, false, or somewhere in the middle, then show you how those claims stack up to others.</p>
+                </div> <div className="col-lg-2" />
+                </div> 
                 </div>
+                <div className="item">
+                <div className="text-cap-cl">
+                <div className="col-lg-2" />
+                <div className="col-lg-8">
+                <h2>Welcome To Prooven !</h2>
+                <h4>Your World. Verified.</h4>
+                <img src={Tick} alt="Tick Image" className="img-cl"/>
+                <p>Integrity. Trust. Accountability.</p>
+                <p>Prooven takes a next-gen approach to verifying information that you come across daily.</p>
+                <p>We identify items that are true, false, or somewhere in the middle, then show you how those claims stack up to others.</p>
+                </div> <div className="col-lg-2" />
+                </div> 
+                </div>
+                <div className="item">
+                <div className="text-cap-cl">
+                <div className="col-lg-2" />
+                <div className="col-lg-8">
+                <h2>Welcome To Prooven !</h2>
+                <h4>Your World. Verified.</h4>
+                <img src={Tick} alt="Tick Image" className="img-cl"/>
+                <p>Integrity. Trust. Accountability.</p>
+                <p>Prooven takes a next-gen approach to verifying information that you come across daily.</p>
+                <p>We identify items that are true, false, or somewhere in the middle, then show you how those claims stack up to others.</p>
+                </div> <div className="col-lg-2" />
+                </div> 
                 </div>
                 </div>
                 </div>        
@@ -152,6 +185,7 @@ class Login extends React.Component<IProps> {
           <div className="col-md-1"/>
       </div>
     </div>
+    <div className="margin-cl" />
     </div>
  );
 }
@@ -163,7 +197,7 @@ const mapStateToProps = state => ({
   email: state.form.email,
   name: state.form.name,
   phone: state.form.phone,
-  privateKey: state.form.privateKey,
+  phrase: state.form.phrase,
   provider_name: state.form.provider_name,
   provider_type: state.form.provider_type,
   publicKey: state.form.publicKey,
@@ -176,7 +210,7 @@ const mapStateToProps = state => ({
  */
 const mapDispatchToProps = (dispatch: Dispatch) => {
   return {
-    loginInfo: (about_business,country,email,name,phone,privateKey,provider_name,provider_type,publicKey,website) => dispatch({ type: "loginInfo", value:{about_business,country,email,name,phone,privateKey,provider_name,provider_type,publicKey,website} }),
+    loginInfo: (about_business,country,email,name,phone,phrase,provider_name,provider_type,publicKey,website) => dispatch({ type: "loginInfo", value:{about_business,country,email,name,phone,phrase,provider_name,provider_type,publicKey,website} }),
   }
 };
 

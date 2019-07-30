@@ -1,5 +1,6 @@
 body{
     background-color:#f5f7fa;
+  
 }
 .login-cl{
     margin-top:30px;
@@ -24,6 +25,7 @@ label{
     width: 100%;
     font-size: 20px;
 }
+
 .form-left{
     line-height: 46px;
 }
@@ -65,41 +67,61 @@ label{
 .blog .carousel-indicators .active {
     background: #707070;
 }
+.btn-search_contact{
+    background: #f5f7fa;
+}
 .carousel-control.right{
     background-image: none;
 }
 .carousel-control.left{
     background-image: none;
 }
+.carousel-indicators{
+    z-index:1;
+}
 .carousel-indicators li{
-    border: 1px solid #c2c5cb;
-    background-color:#c2c5cb;
-    width:18px;
-    height: 18px;
+    border: 2px solid #b3b3b3;
+    background-color:#b3b3b3;
+    width:12px;
+    height: 12px;
+    margin: 0px 4px;
 }
 .carousel-indicators .active{
-    border: 1px solid #868b97;
-    background-color:#868b97;    
-    margin:1px;
-    width:18px;
-    height: 18px;
+    border: 2px solid #656767;
+    background-color:#656767;    
+    margin: 0px 4px;
+    width:12px;
+    height: 12px;
 }
 .carousel-indicators{
-    top:390px !important;
+    top:520px !important;
     position: relative;
 }
 .align-cl{
     text-align:center;
 }
 .img-cl{
-    height: 90px;
-    width: 90px;
+    height: auto;
+    width: 50%;
     margin-top: 14px;
-    margin-bottom: 46px;
+    margin-bottom: 20px;
 }
 .text-cap-cl h3,h4{
     font-weight: 400;
+    color:#545454e0;
 }
+
+.text-cap-cl h2{
+    color:#424242;   
+    font-size: 28px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+ .text-cap-cl p{
+     font-size: 14px;
+     margin: 0px 0px 17px;
+     word-spacing: 2px;
+ }
 .free-cl{
     margin-bottom: 130px;
 }
@@ -119,7 +141,7 @@ label{
 	  linear-gradient(to bottom, #ffffff 0%,#fff 100%);
 	background-repeat: no-repeat, repeat;
 	background-position: right .7em top 50%, 0 0;
-	background-size: .65em auto, 100%; 
+	background-size: .99em auto, 100%; 
 }
 .select-css::-ms-expand {
 	display: none;
@@ -306,7 +328,7 @@ font-weight: 500;
     line-height: 5px;
 }
 
-.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus{
+.my_btn.active.focus, .my_btn.active:focus, .my_btn.focus, .my_btn:active.focus, .my_btn:active:focus, .my_btn:focus{
     background: #fff;
     width: 30px;
     border: 1px solid #0468b5;
@@ -350,11 +372,44 @@ font-weight: 500;
     padding: 12px;
     line-height: 0px;font-size: 18px;
 }
+.btn-gradient{
+    background: linear-gradient(to bottom right, #3c63ef -2%, #1cafb9 78%);
+    padding: 7px 25px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+    border:1px solid #0468b5;
+}
+.btn-gradient.focus, .btn-gradient:focus, .btn-gradient:hover {
+    color: #006fb9;
+    text-decoration: none;
+    background: #fff;
+    border:1px solid #0468b5;
+}
 .input_search{
     float: left;
     background: #fff;
    width: 90%;
     line-height: 0px; 
+}
+.input_search_contact{
+    float: left;
+    background: #f5f7fa;
+   width: 100%;
+    line-height: 0px; margin: 10px 0px;
+}
+.input_search_contact i{
+    float: left;
+    padding: 10px;
+}
+.my_form_control_contact{
+    float: left;
+    background: #f5f7fa;
+    padding: 10px; border: 0px solid #fff !important;
+    border-radius: 0px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0);
+    font-size: 18px;
+    font-style: normal;     line-height: 18px;
 }
 
 .my_form_control{
@@ -364,7 +419,7 @@ font-weight: 500;
     font-size: 18px;
     font-style: italic; padding: 21px 0px;
 }
-.my_form_control:focus {
+.my_form_control:focus, .my_form_control_contact:focus {
     border-color: #66afe900;
     outline: 0;
     -webkit-box-shadow: inset 0 1px 1pxrgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0);
@@ -525,6 +580,15 @@ font-size: 16px;
     text-transform: uppercase;
     font-weight: 0;
 }
+.btn_feedback:active,  .btn_feedback:focus,  .btn_feedback:hover{
+    border-radius: 0px;
+    box-shadow: none;
+    width: 100%;
+    background: #fff;
+    color: #0f51a7;
+
+}
+
 /* Rounded sliders */
 .switch {
     position: relative;
@@ -710,6 +774,69 @@ font-size: 16px;
     text-align: center;
     margin-top: 25px;
 }
+.table_contact{
+    font-size: 14px;
+    text-align: center;
+}
+.table_contact thead tr th{
+    width:32%;
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.table_contact .my_icon i{
+    float: right;
+}
+.table_contact tbody tr{
+    text-transform: capitalize;
+}
+.table_contact tbody tr:hover, .table_contact tbody tr:hover .table_contact td {
+    background-color: #f6f6f6;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/*--------------------popup---------------*/
+.popup-content{
+    width:95% !important;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0px !important;
+}
+.popup-arrow{
+    height: 0px !important;
+    width: 0px  !important;
+
+}
+.my_popup h3, .my_popup h5 {
+    text-align: left;
+    line-height: 23px;
+
+}
+.close_me{
+    float: right;
+}
+/*-------------inbox------------*/
+.inbx_links li{
+    padding: 7px 20px;
+    font-size: 22px;
+}
+.inbx_links li a{
+    color:#1c1f21;
+    text-decoration: none;
+}
+.inbx_links li a:hover{
+    color:#0f51a7;
+}
+.inbx_active{
+    color:#0f51a7 !important;
+
+}
+.date_time_inbox{
+    float: right;
+    font-size: 14px;
+}
+.table_index{
+    text-align: left;
+}
 @media only screen and (max-width: 800px) {
     .img-cl {       
         margin-bottom: 20px;
@@ -748,6 +875,12 @@ font-size: 16px;
     .icons_circle h3{
         font-size: 15px;
     }
+    .icons_circle a{
+        color:#000;
+    }
+    a{
+        text-decoration: none !important;
+    }
     .icons_resources i {
         width: 30px;
         height: 30px;
@@ -762,6 +895,7 @@ font-size: 16px;
     }
     .user-image i{
         margin-left:70px;
+        
     }
     .notification h3 {
         font-size: 16px;
@@ -788,14 +922,109 @@ font-size: 16px;
     }
     
 }
-.errorMessage-cl{
-    font-size: 16px;
-    color: #f00;
+
+.sucess_signup {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+  
+    height: 100%;
+   
+    background: #000000c7;
+    color: #fff;
+    z-index: 211;
+}
+.sucess_signup h1{
+    color: green;
+    font-size: 20px;line-height: 35px;
     text-align: center;
 }
-.click-cl{
-    color: #337ab7;
+.sucess_message_popup{
+    background: #fff;
+    top:30%;
+    padding: 50px;
+
+}
+
+.show_hide{
+    color: #ffffff;
     font-weight: 600;
     font-size: 16px;
+    background: linear-gradient(to bottom right, #3c63ef -2%, #1cafb9 78%);
+    cursor: pointer;
+    text-transform: capitalize;
+    padding: 6px 10px;
+    border-radius: 30px;
+    text-align: center;
+}
+.footer{
+    z-index: 11;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus{
+    border-top: 4px solid #0468b5;
     cursor: pointer;
 }
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color: #eeeeee00;  
+    border-top: 4px solid #0468b500;
+}
+.nav-tabs>li>a, .nav-tabs>li>a:focus{
+    padding: 20px 70px 20px 70px;  
+    border-top: 4px solid #0468b500;
+}
+.nav-tabs>li>a{
+    border: none;
+    font-size:18px;
+    border-top: 4px solid #0468b500;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+    cursor: pointer;
+    border-top: 4px solid #0468b5;
+}
+.name-cl{
+    margin-left: 15px;
+}
+#tab-icon{
+    color: #0468b5;
+    font-size: 20px;
+    padding-right: 10px;
+}
+.modal-dialog {
+    top:50% !important;
+    transform: translate(0, -50%) !important;
+    -ms-transform: translate(0, -50%) !important;
+    -webkit-transform: translate(0, -50%) !important;
+    margin:auto;
+    width:50%;
+    height:30%;
+  }
+  .modal-content {
+    min-height:100%;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0; 
+  }
+  .modal-body {
+    position:absolute;
+    top:45px; /** height of header **/
+    bottom:45px;  /** height of footer **/
+    left:0;
+    right:0;
+    overflow-y:auto;
+  }
+  .modal-footer {
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+  }

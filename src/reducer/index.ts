@@ -4,7 +4,7 @@ const defaultState = {
   email:'',
   name:'',
   phone:'',
-  privateKey:'',
+  phrase:'',
   provider_name:'',
   provider_type:'',
   publicKey:'',
@@ -21,10 +21,10 @@ export default function(state=defaultState, action) {
         email:action.value.email,
         name:action.value.name,
         phone:action.value.phone,
-        privateKey:action.value.privateKey,
+        phrase:action.value.phrase,
         provider_name:action.value.provider_name,
         provider_type:action.value.provider_type,
-        publicKey:action.value.publicKey,
+        publicKey:action.value.publicKey,     
         website:action.value.website,
       };      
     case 'logoutInfo':
